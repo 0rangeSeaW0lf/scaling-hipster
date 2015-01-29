@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
 
-  namespace :api, constraints: {subdomain: 'api'}, path: '/' do
+  namespace :api, path: '/' do
+    resources :places
   end
+  
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
