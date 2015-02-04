@@ -17,7 +17,8 @@ describe "API Messages" do
 
   it 'doesn\'t create a new place' do
     post '/places', {place: { name: "", address: "Bayreuth", description: "Italian Food"}}
-    expect(response).to be_failed
-    
+    # expect(response).to be_failed
+    # expect(response).to have_status(:created)
+    expect(response).to have_status(:unprocessable_entity)
   end
 end

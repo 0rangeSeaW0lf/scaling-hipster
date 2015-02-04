@@ -14,7 +14,11 @@ class API::V1::PlacesController < ApplicationController
 
     def create
         place = Place.create(place_params)
-        render :json => place, status: :ok
+        if place.valid?
+            render :json => place, status: :ok
+        else
+            render :json => {:errors => place.errors}, :status => 422 #unprocessable blahblah...
+        end
     end
 
     def update
