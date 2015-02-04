@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :place do
-    name "MyString"
-    description "MyString"
-    address "MyString"
+    name "Avila Tei"
+    description "Japanese Cuisine"
+    address "Caracas"
   end
 
 end
